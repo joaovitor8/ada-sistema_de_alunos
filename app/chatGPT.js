@@ -86,8 +86,6 @@ const validateNumber = (value) => {
   }
 };
 
-// ---
-
 const BuscarAluno = () => {
   try {
     const buscar = getElementValue("buscar-aluno");
@@ -103,8 +101,6 @@ const buscarAluno = (filtro) => {
   return DBalunos.filter((aluno) => aluno.codigo === filtro);
 };
 
-// ---
-
 const RemoverAluno = () => {
   try {
     const buscar = getElementValue("buscar-aluno");
@@ -116,8 +112,6 @@ const RemoverAluno = () => {
     alert(`Erro ao tentar remover aluno: ${error}`);
   }
 };
-
-// ---
 
 const CalcularMedia = () => {
   try {
@@ -131,8 +125,6 @@ const CalcularMedia = () => {
     alert(`Erro ao tentar calcular média: ${error}`);
   }
 };
-
-// ---
 
 const AtivarAluno = () => {
   AlterarStatusAluno(true);
@@ -161,8 +153,6 @@ const AlterarStatusAluno = (ativar) => {
   }
 };
 
-// ---
-
 const ValidacaoDados = (buscar, filtrar) => {
   if (!buscar) {
     throw new Error("Por favor, insira um código de aluno válido!");
@@ -171,8 +161,6 @@ const ValidacaoDados = (buscar, filtrar) => {
     throw new Error("Nenhum aluno encontrado com o código fornecido.");
   }
 };
-
-// ---
 
 const AlunosCadastrados = () => {
   const msn = "alunos";
@@ -204,8 +192,6 @@ const AlunosReprovados = () => {
     return media < 6;
   }, msn);
 };
-
-// ---
 
 const filtrarAlunos = (filtroFunction, mensagem) => {
   try {
