@@ -36,16 +36,7 @@ let DBalunos = [
   },
 ];
 
-const getElementValue = (elementId) => {
-  const element = document.getElementById(elementId);
-  return element.value.trim().toLowerCase();
-};
-
-const validateNumber = (value) => {
-  if (isNaN(value)) {
-    throw new Error(`"${value}" não é um número válido`);
-  }
-};
+// ---
 
 const CadastrarAluno = () => {
   try {
@@ -84,20 +75,18 @@ const CadastrarAluno = () => {
   }
 };
 
+const getElementValue = (elementId) => {
+  const element = document.getElementById(elementId);
+  return element.value.trim().toLowerCase();
+};
+
+const validateNumber = (value) => {
+  if (isNaN(value)) {
+    throw new Error(`"${value}" não é um número válido`);
+  }
+};
+
 // ---
-
-const buscarAluno = (filtro) => {
-  return DBalunos.filter((aluno) => aluno.codigo === filtro);
-};
-
-const ValidacaoDados = (buscar, filtrar) => {
-  if (!buscar) {
-    throw new Error("Por favor, insira um código de aluno válido!");
-  }
-  if (filtrar.length === 0) {
-    throw new Error("Nenhum aluno encontrado com o código fornecido.");
-  }
-};
 
 const BuscarAluno = () => {
   try {
@@ -109,6 +98,12 @@ const BuscarAluno = () => {
     alert(`Erro ao tentar buscar aluno: ${error}`);
   }
 };
+
+const buscarAluno = (filtro) => {
+  return DBalunos.filter((aluno) => aluno.codigo === filtro);
+};
+
+// ---
 
 const RemoverAluno = () => {
   try {
@@ -122,6 +117,8 @@ const RemoverAluno = () => {
   }
 };
 
+// ---
+
 const CalcularMedia = () => {
   try {
     const buscar = getElementValue("buscar-aluno");
@@ -133,6 +130,16 @@ const CalcularMedia = () => {
   } catch (error) {
     alert(`Erro ao tentar calcular média: ${error}`);
   }
+};
+
+// ---
+
+const AtivarAluno = () => {
+  AlterarStatusAluno(true);
+};
+
+const DesativarAluno = () => {
+  AlterarStatusAluno(false);
 };
 
 const AlterarStatusAluno = (ativar) => {
@@ -154,12 +161,48 @@ const AlterarStatusAluno = (ativar) => {
   }
 };
 
-const AtivarAluno = () => {
-  AlterarStatusAluno(true);
+// ---
+
+const ValidacaoDados = (buscar, filtrar) => {
+  if (!buscar) {
+    throw new Error("Por favor, insira um código de aluno válido!");
+  }
+  if (filtrar.length === 0) {
+    throw new Error("Nenhum aluno encontrado com o código fornecido.");
+  }
 };
 
-const DesativarAluno = () => {
-  AlterarStatusAluno(false);
+// ---
+
+const AlunosCadastrados = () => {
+  const msn = "alunos";
+  filtrarAlunos(() => true, msn);
+};
+
+const AlunosAtivos = () => {
+  const msn = "alunos ativos";
+  filtrarAlunos((aluno) => aluno.ativo === true, msn);
+};
+
+const AlunosInativos = () => {
+  const msn = "alunos desativados";
+  filtrarAlunos((aluno) => aluno.ativo === false, msn);
+};
+
+const AlunosAprovados = () => {
+  const msn = "alunos aprovados";
+  filtrarAlunos((aluno) => {
+    const media = aluno.notas.reduce((sum, nota) => sum + nota, 0) / aluno.notas.length;
+    return media >= 6;
+  }, msn);
+};
+
+const AlunosReprovados = () => {
+  const msn = "alunos reprovados";
+  filtrarAlunos((aluno) => {
+    const media = aluno.notas.reduce((sum, nota) => sum + nota, 0) / aluno.notas.length;
+    return media < 6;
+  }, msn);
 };
 
 // ---
@@ -196,36 +239,7 @@ const Mostrar = (alunos) => {
   )).join("")
 }
 
-const AlunosCadastrados = () => {
-  const msn = "alunos";
-  filtrarAlunos(() => true, msn);
-};
-
-const AlunosAtivos = () => {
-  const msn = "alunos ativos";
-  filtrarAlunos((aluno) => aluno.ativo === true, msn);
-};
-
-const AlunosInativos = () => {
-  const msn = "alunos desativados";
-  filtrarAlunos((aluno) => aluno.ativo === false, msn);
-};
-
-const AlunosAprovados = () => {
-  const msn = "alunos aprovados";
-  filtrarAlunos((aluno) => {
-    const media = aluno.notas.reduce((sum, nota) => sum + nota, 0) / aluno.notas.length;
-    return media >= 6;
-  }, msn);
-};
-
-const AlunosReprovados = () => {
-  const msn = "alunos reprovados";
-  filtrarAlunos((aluno) => {
-    const media = aluno.notas.reduce((sum, nota) => sum + nota, 0) / aluno.notas.length;
-    return media < 6;
-  }, msn);
-};
+// ---
 
 // 260 linhas - meu codigo
 // 190 linhas - gpt
