@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.cadastrar {
+  margin-bottom: 5px;
+  background-color: rgb(200, 200, 200);
+  padding: 10px;
+  width: 75%;
+}
+
+.cadastrar p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cadastrar span, label {
+  width: 100px;
+}
+
+.cadastrar button {
+  margin-top: 15px;
+}
+
+.acoes {
+  background-color: rgb(200, 200, 200);
+  padding: 10px;
+  width: 75%;
+}
+
+.visualizar {
+  background-color: rgb(200, 200, 200);
+  padding: 10px;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.aluno {
+  background-color: azure;
+  padding: 10px;
+  margin-right: 5px;
+}

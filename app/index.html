@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Lógica Sempre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Sistema de Gerenciamento de Alunos</h1>
+  <hr>
+
+  <div class="cadastrar">
+    <h2>Cadastro de Alunos</h2>
+    
+    <p>
+      <span>Codigo: </span>
+      <input type="text" placeholder="Codigo do Aluno" id="codigo">
+    </p>
+
+    <p>
+      <span>Nome: </span>
+      <input type="text" placeholder="Nome do Aluno" id="nome">
+    </p>
+
+    <p>
+      <span>Sobrenome: </span>
+      <input type="text" placeholder="Sobrenome do Aluno" id="sobrenome">
+    </p>
+
+    <p>
+      <span>Email: </span>
+      <input type="text" placeholder="Email do Aluno" id="email">
+    </p>
+
+    <p>
+      <label>Notas: </label>
+      <input type="text" placeholder="Primeira nota" id="nota1">
+      <input type="text" placeholder="Segunda nota" id="nota2">
+      <input type="text" placeholder="Terceira nota" id="nota3">
+      <input type="text" placeholder="Quarta nota" id="nota4">
+    </p>
+
+    <p>
+      <label>Ativo: </label>
+      <select id="ativo">
+        <option>true</option>
+        <option>false</option>
+      </select>
+    </p>
+
+    <button onclick="CadastrarAluno()">Adicionar Aluno</button>
+  </div>
+
+  <hr>
+
+  <div class="acoes">
+    <h2>Funcionalidades</h2>
+    
+    <p>
+      <span>Buscar um Aluno: </span>
+      <input type="text" placeholder="Informe o Codigo" id="buscar-aluno">
+      <div>
+        <button onclick="BuscarAluno()">Buscar</button>
+        <button onclick="RemoverAluno()">Remover</button>
+        <button onclick="CalcularMedia()">Media</button>
+        <button onclick="AtivarAluno()">Ativar</button>
+        <button onclick="DesativarAluno()">Desativar</button>
+      </div>
+      
+      <div>
+        <button onclick="AlunosCadastrados()">Todos os Alunos</button>
+        <button onclick="AlunosAtivos()">Alunos Ativos</button>
+        <button onclick="AlunosInativos()">Alunos Inativos</button>
+        <button onclick="AlunosAprovados()">Aprovados</button>
+        <button onclick="AlunosReprovados()">Reprovados</button>
+      </div>
+    </p>
+  </div>
+
+  <hr>
+
+  <div id="visualizar" class="visualizar"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
