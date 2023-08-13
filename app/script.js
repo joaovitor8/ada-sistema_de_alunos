@@ -112,7 +112,7 @@ const BuscarAluno = () => {
     const buscar = document.getElementById("buscar-aluno").value
     const filtrar = DBalunos.filter(function(a) { return a.codigo === buscar })
   
-    Validacao(buscar, filtrar)
+    ValidacaoDados(buscar, filtrar)
 
     Mostrar(filtrar)
     
@@ -126,7 +126,7 @@ const RemoverAluno = () => {
     const buscar = document.getElementById("buscar-aluno").value
     const filtrar = DBalunos.filter(function(a) { return a.codigo !== buscar })
   
-    Validacao(buscar, filtrar)
+    ValidacaoDados(buscar, filtrar)
 
     DBalunos = filtrar
     alert("Aluno removido com sucesso!")
@@ -141,7 +141,7 @@ const CalcularMedia = () => {
     const buscar = document.getElementById("buscar-aluno").value
     const filtrar = DBalunos.filter(function(a) { return a.codigo === buscar })
   
-    Validacao(buscar, filtrar)
+    ValidacaoDados(buscar, filtrar)
 
     const media = (filtrar[0].notas[0] + filtrar[0].notas[1] + filtrar[0].notas[2] + filtrar[0].notas[3]) / 4
     alert(`A media desse aluno é ${media}`)
@@ -156,7 +156,7 @@ const AtivarAluno = () => {
     const buscar = document.getElementById("buscar-aluno").value
     const filtrar = DBalunos.filter(function(a) { return a.codigo === buscar })
 
-  Validacao(buscar, filtrar)
+    ValidacaoDados(buscar, filtrar)
 
     if (filtrar[0].ativo === true) {
       throw new Error("Aluno já ativo")
@@ -175,7 +175,7 @@ const DesativarAluno = () => {
     const buscar = document.getElementById("buscar-aluno").value
     const filtrar = DBalunos.filter(function(a) { return a.codigo === buscar })
     
-    Validacao(buscar, filtrar)
+    ValidacaoDados(buscar, filtrar)
 
     if (filtrar[0].ativo === false) {
       throw new Error("Aluno já desativado")
@@ -272,7 +272,7 @@ const AlunosReprovados = () => {
 
 // ---
 
-const Validacao = (buscar, filtrar) => {
+const ValidacaoDados = (buscar, filtrar) => {
   if (!buscar || filtrar.length === 0) {
     throw new Error("Aluno não encontrado")
   }
@@ -299,3 +299,4 @@ const Mostrar = (alunos) => {
 }
 
 AlunosCadastrados()
+
