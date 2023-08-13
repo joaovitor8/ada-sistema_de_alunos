@@ -25,24 +25,43 @@ let DBalunos = [
     notas: [9, 4, 7, 8],
     ativo: true
   },
+
+  {
+    codigo: "4",
+    nome: "Maria",
+    sobrenome: "Silva",
+    email: "maria@gmail.com",
+    notas: [10, 5, 8, 6],
+    ativo: false
+  },
 ]
 
 // ---
 
 const CadastrarAluno = () => {
   try {
-    const codigo = document.getElementById("codigo").value.trim().toLowerCase()
-    const nome = document.getElementById("nome").value.trim().toLowerCase()
-    const sobrenome = document.getElementById("sobrenome").value.trim().toLowerCase()
-    const email = document.getElementById("email").value.trim().toLowerCase()
-    
-    const nota1 = document.getElementById("nota1").value
-    const nota2 = document.getElementById("nota2").value
-    const nota3 = document.getElementById("nota3").value
-    const nota4 = document.getElementById("nota4").value
+    const inputCodigo = document.getElementById("codigo")
+    const inputNome = document.getElementById("nome")
+    const inputSobrenome = document.getElementById("sobrenome")
+    const inputEmail = document.getElementById("email")
+
+    const codigo = inputCodigo.value.trim().toLowerCase()
+    const nome = inputNome.value.trim().toLowerCase()
+    const sobrenome = inputSobrenome.value.trim().toLowerCase()
+    const email = inputEmail.value.trim().toLowerCase()
+
+    const inputNota1 = document.getElementById("nota1")
+    const inputNota2 = document.getElementById("nota2")
+    const inputNota3 = document.getElementById("nota3")
+    const inputNota4 = document.getElementById("nota4")
+
+    const nota1 = inputNota1.value
+    const nota2 = inputNota2.value
+    const nota3 = inputNota3.value
+    const nota4 = inputNota4.value
 
     if (!codigo || !nome || !sobrenome || !email || !nota1 || !nota2 || !nota3 || !nota4) {
-      throw new Error("Por favor preencha todas as informações!")
+      throw new Error("Por favor preencha todos os campos corretamente!")
     }
 
     const filtrar = DBalunos.filter(function(a) { return a.codigo === codigo || a.email === email })
@@ -63,11 +82,22 @@ const CadastrarAluno = () => {
       throw new Error("Nota 4 não é um número válido")
     }
     const listaNotas = [Number(nota1), Number(nota2), Number(nota3), Number(nota4)]
-  
+
     const ativo = Boolean(document.getElementById("ativo").value)
 
     DBalunos.push({codigo, nome, sobrenome, email, notas: listaNotas, ativo})
     alert("Aluno cadastrado com sucesso!")
+
+    inputCodigo.value = ""
+    inputNome.value = ""
+    inputSobrenome.value = ""
+    inputEmail.value = ""
+    inputNota1.value = ""
+    inputNota2.value = ""
+    inputNota3.value = ""
+    inputNota4.value = ""
+
+    inputCodigo.focus()
 
     console.log(DBalunos)
   } catch (error) {
