@@ -1,49 +1,100 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+h1 {
+  margin: 20px 0;
 }
 
 h2 {
-  margin-bottom: 15px;
+  margin: 5px 0 15px 0;
+  text-align: center;
 }
 
-.cadastrar {
-  margin-bottom: 5px;
+input {
+  padding: 3px;
+  width: 135px;
+  margin: 1px 1px;
+}
+
+select {
+  padding: 3px;
+  width: 70px;
+}
+
+button {
+  padding: 3px;
+  width: 110px;
+}
+
+.div-cadastro {
   background-color: rgb(200, 200, 200);
   padding: 10px;
-  width: 75%;
+  width: 50%;
 }
 
-.cadastrar p {
+.div-cadastro button {
+  margin: 15px 0px 5px 15px;
+}
+
+.div-spans-inputs {
   display: flex;
   flex-wrap: wrap;
+  font-weight: bold;
+  margin: 5px 0px;
 }
 
-.cadastrar span, label {
+.div-spans-inputs span, label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   width: 100px;
+  margin-right: 10px;
 }
 
-.cadastrar button {
-  margin-top: 15px;
+.div-label-notas {
+  display: flex;
+  flex-direction: row;
+}
+
+.div-notas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 55px;
 }
 
 .acoes {
   background-color: rgb(200, 200, 200);
   padding: 10px;
-  width: 75%;
+  width: 50%;
+}
+
+.div-span-input-buttons {
+  font-weight: bold;
+}
+
+.div-buttons {
+  margin: 5px 0;
+}
+
+.div-visualizar-alunos {
+  background-color: rgb(200, 200, 200);
+  padding: 10px;
+  width: 50%;
 }
 
 .visualizar {
-  background-color: rgb(200, 200, 200);
-  padding: 10px;
-  width: 75%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -51,7 +102,8 @@ h2 {
 
 .aluno {
   background-color: azure;
+  height: 150px;
+  width: 201px;
   padding: 10px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 1px;
 }

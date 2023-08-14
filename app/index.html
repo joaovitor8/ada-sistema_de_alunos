@@ -11,44 +11,48 @@
   <h1>Sistema de Gerenciamento de Alunos</h1>
   <hr>
 
-  <div class="cadastrar">
+  <div class="div-cadastro">
     <h2>Cadastro de Alunos</h2>
     
-    <p>
+    <div class="div-spans-inputs">
       <span>Codigo: </span>
       <input type="text" placeholder="Codigo do Aluno" id="codigo">
-    </p>
+    </div>
 
-    <p>
+    <div class="div-spans-inputs">
       <span>Nome: </span>
       <input type="text" placeholder="Nome do Aluno" id="nome">
-    </p>
+    </div>
 
-    <p>
+    <div class="div-spans-inputs">
       <span>Sobrenome: </span>
       <input type="text" placeholder="Sobrenome do Aluno" id="sobrenome">
-    </p>
+    </div>
 
-    <p>
+    <div class="div-spans-inputs">
       <span>Email: </span>
       <input type="text" placeholder="Email do Aluno" id="email">
-    </p>
+    </div>
 
-    <p>
-      <label>Notas: </label>
-      <input type="text" placeholder="Primeira nota" id="nota1">
-      <input type="text" placeholder="Segunda nota" id="nota2">
-      <input type="text" placeholder="Terceira nota" id="nota3">
-      <input type="text" placeholder="Quarta nota" id="nota4">
-    </p>
+    <div class="div-spans-inputs">
+      <div class="div-label-notas">
+        <label>Notas: </label>
+        <div class="div-notas">
+          <input type="text" placeholder="Primeira nota" id="nota1">
+          <input type="text" placeholder="Segunda nota" id="nota2">
+          <input type="text" placeholder="Terceira nota" id="nota3">
+          <input type="text" placeholder="Quarta nota" id="nota4">
+        </div>
+      </div>
+    </div>
 
-    <p>
+    <div class="div-spans-inputs">
       <label>Ativo: </label>
       <select id="ativo">
         <option>true</option>
         <option>false</option>
       </select>
-    </p>
+    </div>
 
     <button onclick="CadastrarAluno()">Adicionar Aluno</button>
   </div>
@@ -58,10 +62,12 @@
   <div class="acoes">
     <h2>Funcionalidades</h2>
     
-    <p>
-      <span>Buscar um Aluno: </span>
-      <input type="text" placeholder="Informe o Codigo" id="buscar-aluno">
-      <div>
+    <div class="div-span-input-buttons">
+      <div class="div-spans-inputs">
+        <span>Buscar Aluno: </span>
+        <input type="text" placeholder="Informe o Codigo" id="buscar-aluno">
+      </div>
+      <div class="div-buttons">
         <button onclick="BuscarAluno()">Buscar</button>
         <button onclick="RemoverAluno()">Remover</button>
         <button onclick="CalcularMedia()">Media</button>
@@ -69,19 +75,22 @@
         <button onclick="DesativarAluno()">Desativar</button>
       </div>
       
-      <div>
+      <div class="div-buttons">
         <button onclick="AlunosCadastrados()">Todos os Alunos</button>
         <button onclick="AlunosAtivos()">Alunos Ativos</button>
         <button onclick="AlunosInativos()">Alunos Inativos</button>
         <button onclick="AlunosAprovados()">Aprovados</button>
         <button onclick="AlunosReprovados()">Reprovados</button>
       </div>
-    </p>
+    </div>
   </div>
 
   <hr>
 
-  <div id="visualizar" class="visualizar"></div>
+  <div class="div-visualizar-alunos">
+    <h2>Alunos</h2>
+    <div id="visualizar" class="visualizar"></div>
+  </div>
 
   <script src="script.js"></script>
   <!-- <script src="chatGPT.js"></script> -->
