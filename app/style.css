@@ -13,6 +13,7 @@ body {
 
 h1 {
   margin: 20px 0;
+  text-align: center;
 }
 
 h2 {
@@ -48,7 +49,6 @@ button {
 
 .div-spans-inputs {
   display: flex;
-  flex-wrap: wrap;
   font-weight: bold;
   margin: 5px 0px;
 }
@@ -69,9 +69,10 @@ button {
 
 .div-notas {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   height: 55px;
+  width: 274px;
 }
 
 .div-acoes {
@@ -113,4 +114,17 @@ td {
 thead, tfoot {
   background-color: #333;
   color: #fff;
+}
+
+@media screen and (max-width: 810px) {
+  .div-cadastro, .div-acoes, .div-visualizar-alunos {
+    width: 75%;
+   }
+
+   .div-notas {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+   }
 }
