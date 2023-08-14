@@ -285,15 +285,15 @@ const NaoHaAlunos = (alunos, msn) => {
 }
 
 const Mostrar = (alunos) => {
-  document.getElementById("visualizar").innerHTML = alunos.map((a) => (
+  document.getElementById("alunos").innerHTML = alunos.map((a) => (
     `
-      <div class="aluno">
-        <p>Codigo: ${a.codigo}</p>
-        <p>Nome: ${a.nome} ${a.sobrenome}</p>
-        <p>Email: ${a.email}</p>
-        <p>Notas: ${a.notas[0]} ${a.notas[1]} ${a.notas[2]} ${a.notas[3]}</p>
-        <p>Ativo: ${a.ativo}</p>
-      </div>
+    <tr>
+      <td>${a.codigo}</td>
+      <td>${a.nome} ${a.sobrenome}</td>
+      <td>${a.email}</td>
+      <td>${a.notas[0]}, ${a.notas[1]}, ${a.notas[2]}, ${a.notas[3]}</td>
+      <td>${a.ativo}</td>
+    </tr>
     `
   )).join("")
 }

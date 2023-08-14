@@ -74,7 +74,7 @@ button {
   height: 55px;
 }
 
-.acoes {
+.div-acoes {
   background-color: rgb(200, 200, 200);
   padding: 10px;
   width: 50%;
@@ -85,6 +85,9 @@ button {
 }
 
 .div-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin: 5px 0;
 }
 
@@ -94,16 +97,20 @@ button {
   width: 50%;
 }
 
-.visualizar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+table {
+  width: 100%;
+  background-color: white;
 }
 
-.aluno {
-  background-color: azure;
-  height: 150px;
-  width: 201px;
-  padding: 10px;
-  margin: 1px;
+table, td {
+  border: 1px solid #333;
+}
+
+td {
+  text-align: center;
+}
+
+thead, tfoot {
+  background-color: #333;
+  color: #fff;
 }

@@ -59,7 +59,7 @@
 
   <hr>
 
-  <div class="acoes">
+  <div class="div-acoes">
     <h2>Funcionalidades</h2>
     
     <div class="div-span-input-buttons">
@@ -89,7 +89,18 @@
 
   <div class="div-visualizar-alunos">
     <h2>Alunos</h2>
-    <div id="visualizar" class="visualizar"></div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="1">Codigo</th>
+          <th colspan="1">Nome</th>
+          <th colspan="1">Email</th>
+          <th colspan="1">Notas</th>
+          <th colspan="1">Ativo</th>
+        </tr>
+      </thead>
+      <tbody  id="alunos"></tbody>
+    </table>
   </div>
 
   <script src="script.js"></script>
