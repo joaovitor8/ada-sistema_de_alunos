@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ada_alunos_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ada}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ada_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-ada_alunos}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ada_alunos_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ada} -d ${POSTGRES_DB:-ada_alunos}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  ada_alunos_pgdata:
